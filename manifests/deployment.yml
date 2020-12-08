@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yasirproject 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yasirproject
+  template:
+    metadata:
+      labels:
+        app: yasirproject 
+    spec:
+      containers:
+        - name: yasirproject 
+          image: demoprojregistery.azurecr.io/yasirproject
+          ports:
+          - containerPort: 8080
